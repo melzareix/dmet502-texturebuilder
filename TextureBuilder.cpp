@@ -30,7 +30,13 @@ void loadBMP(GLuint *texture, const char *filename, int width = 1024, int height
   gluBuild2DMipmaps(GL_TEXTURE_2D, 3, width, height, GL_RGB, GL_UNSIGNED_BYTE, data);
   free(data);
 }
+void loadBMP(GLuint *texture, const char *filename, bool wrap) {
+  loadBMP(texture, filename, 1024, 512, wrap);
+}
 
-void loadBMP(GLuint *texID, const char *filename, bool wrap) {
-  loadBMP(texID, filename, 1024, 512, wrap);
+void loadPPM(GLuint *texture, const char *filename, int width = 1024, int height = 512, bool wrap = true) {
+  loadBMP(texture, filename, width, height, wrap);
+}
+void loadPPM(GLuint *texture, const char *filename, bool wrap){
+  loadBMP(texture, filename, wrap);
 }
