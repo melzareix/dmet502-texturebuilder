@@ -11,4 +11,6 @@
 #endif
 
 void loadBMP(GLuint*, const char *, bool);
+void loadPPM(GLuint*, const char *, bool);
 void loadBMP(GLuint*, const char *,int, int, bool);
+void loadPPM(GLuint*, const char *,int, int, bool);
